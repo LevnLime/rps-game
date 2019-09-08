@@ -1,5 +1,54 @@
 <html>
+
+<head>
+    <script src="game.js"></script>
+</head>
+
 <body>
-Hello World
+    <div id="menu" >
+        <div id="menuMessage"></div>
+        <input id="playerName"></input>
+        <button id="joinGameButton">Join Game!</button>
+        <button id="quitGameButton">Quit</button>
+    </div>
+
+    <div id="game">
+        <div>
+            Score:
+            <div id="myScore">1</div>
+            <div id="oppScore">2</div>
+        </div>
+        <br>
+        <div>
+            Make your choice:
+            <input type="radio" name="rps" value="rock"><label for="rock">Rock</label>
+            <input type="radio" name="rps" value="paper"><label for="paper">Paper</label>
+            <input type="radio" name="rps" value="scissors"><label for="scissors">Scissors</label>
+            <button id="submitRPS">Fight!</button>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDLOIgJ-1j58m1QJ4jFRSu8urq0Tvv9sm0",
+            authDomain: "rps-game-b3f2f.firebaseapp.com",
+            databaseURL: "https://rps-game-b3f2f.firebaseio.com",
+            projectId: "rps-game-b3f2f",
+            storageBucket: "",
+            messagingSenderId: "281811614334",
+            appId: "1:281811614334:web:1afcd2a8a4ed93f5eaf62f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 </body>
+
 </html>
