@@ -15,7 +15,7 @@ window.addEventListener("unload", quitGame);
 
 function pageLoaded(event) {
     // Add event handlers
-    joinButton = document.getElementById("joinGameButton");
+    var joinButton = document.getElementById("joinGameButton");
     joinButton.addEventListener("click", joinGameClick);
     document.getElementById("quitGameButton").addEventListener("click", quitGame);
     document.getElementById("submitRPS").addEventListener("click", submitActionClick);
@@ -78,6 +78,7 @@ function addPlayerToGame() {
         });
         currentPlayerKey = newPlayer.key;
         setMenuMessage("Joined game");
+        document.getElementById("joinGameButton").disabled = true;
 
         // Listen for players to arrive
         firebase.database().ref("/players").on("value", onPlayerChanged);
@@ -90,6 +91,7 @@ function quitGame() {
         firebase.database().ref(`/players/${currentPlayerKey}`).remove();
         currentPlayerKey = undefined;
         setMenuMessage("Quit");
+        document.getElementById("joinGameButton").disabled = false;
 
         // Cleanup firebase listeners
         firebase.database().ref("/players").off();
