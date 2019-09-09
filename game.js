@@ -241,7 +241,7 @@ class Game {
             message += "You win!";
         } else if (roundResult === ROUND_LOSE) {
             this.oppScore++;
-            message += "You win!";
+            message += "You lose!";
         } else {
             message += "Tie!";
         }
