@@ -12,7 +12,7 @@
         <button id="quitGameButton">Quit</button>
     </div>
 
-    <div id="game">
+    <div id="game" hidden>
         <div>
             Score:
             <div id="myScore">1</div>
@@ -21,10 +21,13 @@
         <br>
         <div>
             Make your choice:
-            <input type="radio" name="rps" value="rock"><label for="rock">Rock</label>
-            <input type="radio" name="rps" value="paper"><label for="paper">Paper</label>
-            <input type="radio" name="rps" value="scissors"><label for="scissors">Scissors</label>
+            <input type="radio" name="rps" value="0"><label for="rock">Rock</label>
+            <input type="radio" name="rps" value="1"><label for="paper">Paper</label>
+            <input type="radio" name="rps" value="2"><label for="scissors">Scissors</label>
             <button id="submitRPS">Fight!</button>
+            <button id="quitRPS">Give up...</button>
+            <div id="rpsMessage"></div>
+            <button id="nextRoundRPS">Next Round</button>
         </div>
     </div>
 
